@@ -1,11 +1,10 @@
 package projet_Raises;
 
-import java.io.PrintStream;
 import java.util.List;
 import java.util.Scanner;
 
-public class OperationUsers {
-    public OperationUsers() {
+public class Create_Remove_Users {
+    public Create_Remove_Users() {
     }
 
 
@@ -29,7 +28,7 @@ public class OperationUsers {
             String country = ct.next();
             do {
                 try {
-                    System.out.println("Enter your age (between 18 and 99): ");
+                    System.out.println("Enter your age (between 10 and 99): ");
                     Scanner a = new Scanner(System.in);
                     String ag = a.next();
                     age = Integer.parseInt(ag);
@@ -37,14 +36,13 @@ public class OperationUsers {
                     System.out.println("Error, please enter a number for your age. ");
                     e.getMessage();
                 }
-
-            } while (age < 18 || age > 99);
+            } while (age < 10 || age > 99);
             System.out.println("Enter your specialty: ");
             Scanner s = new Scanner(System.in);
             String specialty = s.next();
             User createAddUser = new User(firstName, name, country, age, specialty);
 
-            if(!ListUsers.isUserExist(firstName, name, listUsers)){
+            if(!Founder.isUserExist(firstName, name, listUsers)){
                 listUsers.add(createAddUser);
                 System.out.println("The user has been created with success!");
             }
@@ -74,9 +72,9 @@ public class OperationUsers {
         Scanner l = new Scanner(System.in);
         String lastName = f.next();
 
-            if (ListUsers.isUserExist(firstName, lastName, listUsers)) {
+            if (Founder.isUserExist(firstName, lastName, listUsers)) {
 
-                    listUsers.remove(ListUsers.foundTheUserExistInList(firstName, lastName, listUsers));
+                    listUsers.remove(Founder.foundTheUserExistInList(firstName, lastName, listUsers));
                     System.out.println("The user has been deleted. ");
 
             } else {

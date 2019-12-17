@@ -3,10 +3,9 @@ package projet_Raises;
 import java.util.List;
 import java.util.Scanner;
 
-public class EditAUser {
-    private static int age;
+public class Edit_User {
 
-    public EditAUser() {
+    public Edit_User() {
 
     }
     /**
@@ -33,35 +32,40 @@ public class EditAUser {
         Scanner l = new Scanner(System.in);
         String lastName = f.nextLine();
 
-        User userWantEdit = ListUsers.foundTheUserExistInList(firstName,lastName,listUsers);
+        User userWantEdit = Founder.foundTheUserExistInList(firstName,lastName,listUsers);
 
-        if (ListUsers.isUserExist(firstName, lastName, listUsers)) {
+        if (Founder.isUserExist(firstName, lastName, listUsers)) {
             System.out.println("Edit your first name, step 'Enter' for keep the same first name. ");
             Scanner nf = new Scanner(System.in);
             String firstNameNew = nf.nextLine();
-            System.out.println("Edit your last name, step 'Enter' for keep the same first name.");
+            System.out.println("Edit your last name, step 'Enter' for keep the same last name.");
             Scanner nl = new Scanner(System.in);
             String lastNameNew = nl.nextLine();
-            System.out.println("Edit your country, step 'Enter' for keep the same first name.");
+            System.out.println("Edit your country, step 'Enter' for keep the same country.");
             Scanner nc = new Scanner(System.in);
             String country = nc.nextLine();
+            int ag = 0;
             do {
-                try {
-                    System.out.println("Edit your age (between 18 and 99): ");
-                    Scanner a = new Scanner(System.in);
 
-                    if(a.nextLine().equals("")){
-                        age = ListUsers.foundTheUserExistInList(firstName,lastName,listUsers).getAge();
+                try {
+                    System.out.println("Edit your age (between 18 and 99), step 'Enter' for keep the same age. ");
+                    Scanner a = new Scanner(System.in);
+                    String s = a.nextLine();
+                    if(s.equals("")){
+                        ag = Founder.foundTheUserExistInList(firstName,lastName,listUsers).getAge();
                         break;
                     }
-                    age = Integer.parseInt(a.nextLine());
+                    else {
+                        ag = Integer.parseInt(s);
+                    }
+
                 }
                 catch (NumberFormatException e){
                     System.out.println("Error, please enter a number. ");
                     e.getMessage();
                 }
-            } while (age < 18 || age > 99 );
-            System.out.println("Edit your specialty, step 'Enter' for keep the same first name.");
+            } while (ag < 18 || ag > 99 );
+            System.out.println("Edit your specialty, step 'Enter' for keep the same specialty.");
             Scanner ns = new Scanner(System.in);
             String specialty = ns.nextLine();
 
@@ -73,19 +77,15 @@ public class EditAUser {
                 lastNameNew = lastName;
             }
             if(country.equals("")){
-                country = ListUsers.foundTheUserExistInList(firstName,lastName,listUsers).getCountry();
+                country = Founder.foundTheUserExistInList(firstName,lastName,listUsers).getCountry();
             }
             if(specialty.equals("")){
-                specialty = ListUsers.foundTheUserExistInList(firstName,lastName,listUsers).getSpecialty();
+                specialty = Founder.foundTheUserExistInList(firstName,lastName,listUsers).getSpecialty();
             }
-
-
-
 
             userWantEdit.setFirstName(firstNameNew);
             userWantEdit.setName(lastNameNew);
             userWantEdit.setCountry(country);
-            userWantEdit.setAge(age);
             userWantEdit.setSpecialty(specialty);
 
             System.out.println("The user has been edited. ");

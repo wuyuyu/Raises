@@ -3,18 +3,7 @@ package projet_Raises;
 import java.util.List;
 import java.util.Scanner;
 
-public class ListUsers {
-
-    /*
-    public ListUsers() {
-        List<User> listUsers;
-        listUsers.add();
-
-    }
-
-     */
-
-
+public class Founder {
 
     public static boolean isUserExist(String firstName, String lastName, List<User> userList){
 

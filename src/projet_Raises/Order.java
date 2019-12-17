@@ -50,15 +50,23 @@ public class Order {
             Order.help();
         }
         if (cmdNumber == 3) {
-            OperationUsers.createAddUser(listUsers);
+            Create_Remove_Users.createAddUser(listUsers);
         }
         if (cmdNumber == 4) {
-            EditAUser.editUser(listUsers);
+            Edit_User.editUser(listUsers);
         }
         if (cmdNumber == 5) {
-            OperationUsers.removeUser(listUsers);
+            Create_Remove_Users.removeUser(listUsers);
         }
         if (cmdNumber == 6) {
+            if(!listUsers.isEmpty()) {
+                for (User user : listUsers) {
+                    System.out.println(user);
+                }
+            }
+            else {
+                System.out.println("User list is empty, please create the users.");
+            }
         }
         if (cmdNumber == 7) {
         }
