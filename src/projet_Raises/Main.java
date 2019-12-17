@@ -1,5 +1,7 @@
 package projet_Raises;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,8 @@ public class Main {
         List<Raises> listRaises = new ArrayList();
         Order.help();
 
+        User user = new User("nn","e","e",18,"dd");
+        System.out.println(user.toString());
         int ch;
         do {
             ch = Order.getUserChoice();
@@ -21,7 +25,6 @@ public class Main {
                 Order.processCmd(ch, listUsers,listItems,listRaises);
             }
         } while(ch != 2);
+
     }
-
-
 }

@@ -8,7 +8,6 @@ public class OperationUsers {
     }
 
     private static int age;
-
     public static void createAddUser(List<User> listUsers) {
 
         try {
@@ -21,12 +20,9 @@ public class OperationUsers {
             System.out.println("Enter your country: ");
             Scanner ct = new Scanner(System.in);
             String country = ct.next();
-
-
             do {
                 try {
                     System.out.println("Enter your age (between 18 and 99): ");
-
                     Scanner a = new Scanner(System.in);
                     String ag = a.next();
                     age = Integer.parseInt(ag);
@@ -35,13 +31,10 @@ public class OperationUsers {
                     e.getMessage();
                 }
 
-            } while (age <= 18 || age >= 99);
-
-
+            } while (age < 18 || age > 99);
             System.out.println("Enter your specialty: ");
             Scanner s = new Scanner(System.in);
             String specialty = s.next();
-
             User createAddUser = new User(firstName, name, country, age, specialty);
 
             if(!ListUsers.isUserExist(firstName, name, listUsers)){
@@ -49,7 +42,7 @@ public class OperationUsers {
                 System.out.println("The user has been created with success!");
             }
             else{
-                System.out.println("The user exist already.");
+                System.out.println("Error: the user exist already, please try again.");
             }
 
         } catch (Exception e) {
@@ -57,10 +50,10 @@ public class OperationUsers {
             e.getMessage();
         }
 
-
     }
 
-    public static void editUser() {
+    public static void editUser(List<User> listUsers) {
+
 
 
     }

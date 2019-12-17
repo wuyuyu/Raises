@@ -18,9 +18,12 @@ public class ListUsers {
 
     public static boolean isUserExist(String firstName, String lastName, List<User> userList){
 
-        if(firstName.equals(userList) && lastName.equals(userList)){
-            return true;
+        for (User user: userList){
+            if(user.getFirstName().equals(firstName) && user.getName().equals(lastName)){
+                return true;
+            }
         }
+
          return false;
     }
 

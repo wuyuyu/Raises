@@ -34,6 +34,7 @@ public class Order {
         try {
             choice = sc.nextInt();
         } catch (Exception var3) {
+            System.out.println("Error: Please enter a number between 1 and 15.");
             choice = -1;
         }
 
