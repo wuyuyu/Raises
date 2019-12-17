@@ -72,13 +72,19 @@ public class OperationUsers {
         Scanner l = new Scanner(System.in);
         String lastName = f.next();
 
-        if(ListUsers.isUserExist(firstName,lastName,listUsers)){
-            listUsers.remove(ListUsers.foundTheUserExistInList(firstName,lastName,listUsers));
-            System.out.println("The user has been deleted. ");
-        }
-        else{
-            System.out.println("Error: the user is not found in our list users, please try again.");
-        }
+            if (ListUsers.isUserExist(firstName, lastName, listUsers)) {
+                System.out.println("Are you sure that you wants to delete this user? Step 'y' to continue...");
+                Scanner yn = new Scanner(System.in);
+                String y = yn.next();
+                if(y == "y") {
+                    listUsers.remove(ListUsers.foundTheUserExistInList(firstName, lastName, listUsers));
+                    System.out.println("The user has been deleted. ");
+                }
+            } else {
+                System.out.println("Error: the user is not found in our list users, please try again.");
+            }
+
+
         /**
          * si l'utilisateur est utilisé dans la troisième table enchères,,
          * alors l'effacement de cet utilisateur ne pourra pas se faire et un message d'erreur sera affiché
