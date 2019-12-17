@@ -42,7 +42,7 @@ public class Create_Remove_Users {
             String specialty = s.next();
             User createAddUser = new User(firstName, name, country, age, specialty);
 
-            if(!Founder.isUserExist(firstName, name, listUsers)){
+            if(!Finder.isUserExist(firstName, name, listUsers)){
                 listUsers.add(createAddUser);
                 System.out.println("The user has been created with success!");
             }
@@ -72,9 +72,9 @@ public class Create_Remove_Users {
         Scanner l = new Scanner(System.in);
         String lastName = f.next();
 
-            if (Founder.isUserExist(firstName, lastName, listUsers)) {
+            if (Finder.isUserExist(firstName, lastName, listUsers)) {
 
-                    listUsers.remove(Founder.foundTheUserExistInList(firstName, lastName, listUsers));
+                    listUsers.remove(Finder.findTheUserExistInList(firstName, lastName, listUsers));
                     System.out.println("The user has been deleted. ");
 
             } else {

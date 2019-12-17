@@ -69,6 +69,7 @@ public class Order {
             }
         }
         if (cmdNumber == 7) {
+            Create_Remove_Items.createAddItem(listItems);
         }
         if (cmdNumber == 8) {
             System.out.println("88888");

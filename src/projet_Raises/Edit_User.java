@@ -32,9 +32,9 @@ public class Edit_User {
         Scanner l = new Scanner(System.in);
         String lastName = f.nextLine();
 
-        User userWantEdit = Founder.foundTheUserExistInList(firstName,lastName,listUsers);
+        User userWantEdit = Finder.findTheUserExistInList(firstName,lastName,listUsers);
 
-        if (Founder.isUserExist(firstName, lastName, listUsers)) {
+        if (Finder.isUserExist(firstName, lastName, listUsers)) {
             System.out.println("Edit your first name, step 'Enter' for keep the same first name. ");
             Scanner nf = new Scanner(System.in);
             String firstNameNew = nf.nextLine();
@@ -52,7 +52,7 @@ public class Edit_User {
                     Scanner a = new Scanner(System.in);
                     String s = a.nextLine();
                     if(s.equals("")){
-                        ag = Founder.foundTheUserExistInList(firstName,lastName,listUsers).getAge();
+                        ag = Finder.findTheUserExistInList(firstName,lastName,listUsers).getAge();
                         break;
                     }
                     else {
@@ -77,10 +77,10 @@ public class Edit_User {
                 lastNameNew = lastName;
             }
             if(country.equals("")){
-                country = Founder.foundTheUserExistInList(firstName,lastName,listUsers).getCountry();
+                country = Finder.findTheUserExistInList(firstName,lastName,listUsers).getCountry();
             }
             if(specialty.equals("")){
-                specialty = Founder.foundTheUserExistInList(firstName,lastName,listUsers).getSpecialty();
+                specialty = Finder.findTheUserExistInList(firstName,lastName,listUsers).getSpecialty();
             }
 
             userWantEdit.setFirstName(firstNameNew);
