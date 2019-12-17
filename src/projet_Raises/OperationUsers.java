@@ -19,11 +19,17 @@ public class OperationUsers {
             System.out.println("Enter your country: ");
             Scanner ct = new Scanner(System.in);
             String country = ct.next();
-            System.out.println("Enter your age: ");
+            int age;
 
-            Scanner a = new Scanner(System.in);
-            String ag = a.next();
-            int age = Integer.parseInt(ag);
+            do {
+                    System.out.println("Enter your age (between 18 and 99): ");
+
+                    Scanner a = new Scanner(System.in);
+                    String ag = a.next();
+                    age = Integer.parseInt(ag);
+            } while (age <= 18 || age >= 99);
+
+
             System.out.println("Enter your specialty: ");
             Scanner s = new Scanner(System.in);
             String specialty = s.next();
@@ -39,10 +45,11 @@ public class OperationUsers {
             }
 
 
-
-
+        }catch (NumberFormatException e){
+            System.out.println("Error, please enter a number for your age. ");
+            e.getMessage();
         } catch (Exception e) {
-            System.out.println("Age is a number, please enter a number.");
+            System.out.println("Error.");
             e.getMessage();
         }
 
