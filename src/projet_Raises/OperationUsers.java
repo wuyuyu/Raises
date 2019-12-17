@@ -8,7 +8,13 @@ public class OperationUsers {
     public OperationUsers() {
     }
 
+
     private static int age;
+
+    /**
+     *
+     * @param listUsers
+     */
     public static void createAddUser(List<User> listUsers) {
 
         try {
@@ -53,16 +59,12 @@ public class OperationUsers {
 
     }
 
-    public static void editUser(List<User> listUsers) {
-        System.out.println("First name of the user who you wants to edit.");
-        Scanner f = new Scanner(System.in);
-        String firstName = f.next();
-        System.out.println("Last name of the user who you wants to edit.");
-        Scanner l = new Scanner(System.in);
-        String lastName = f.next();
 
 
-    }
+    /**
+     *
+     * @param listUsers
+     */
 
     public static void removeUser(List<User> listUsers){
         System.out.println("First name of the user who you wants to delete.");
@@ -73,19 +75,16 @@ public class OperationUsers {
         String lastName = f.next();
 
             if (ListUsers.isUserExist(firstName, lastName, listUsers)) {
-                System.out.println("Are you sure that you wants to delete this user? Step 'y' to continue...");
-                Scanner yn = new Scanner(System.in);
-                String y = yn.next();
-                if(y == "y") {
+
                     listUsers.remove(ListUsers.foundTheUserExistInList(firstName, lastName, listUsers));
                     System.out.println("The user has been deleted. ");
-                }
+
             } else {
                 System.out.println("Error: the user is not found in our list users, please try again.");
             }
 
-
         /**
+         * !!!!!!!!!!!!!!!!!!!!
          * si l'utilisateur est utilisé dans la troisième table enchères,,
          * alors l'effacement de cet utilisateur ne pourra pas se faire et un message d'erreur sera affiché
          */
