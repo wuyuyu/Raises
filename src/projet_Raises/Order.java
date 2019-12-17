@@ -53,8 +53,10 @@ public class Order {
             OperationUsers.createAddUser(listUsers);
         }
         if (cmdNumber == 4) {
+            OperationUsers.editUser(listUsers);
         }
         if (cmdNumber == 5) {
+            OperationUsers.removeUser(listUsers);
         }
         if (cmdNumber == 6) {
         }
