@@ -26,10 +26,20 @@ public class Finder {
         return userFound;
     }
 
-    public static Items findTheItemInList (String reference, List<Items> itemsList,List<Raises> RaisesList){
-        Items item = null;
-        for(Raises ){
-            if(items.getReference().equals())
-        }
+
+    /**
+     *la commande cherche d'abord si la référence de l'objet est présente dans la troisème table, et si l'objet existe dejà error
+     * @param reference
+     * @param RaisesList
+     * @return
+     */
+    public static boolean isReferenceExistInListRaises(String reference, List<Raises> listRaises) {
+
+        for (Raises raises : listRaises) {
+            if (raises.getRef().equals(reference)) {
+                return true;
+
+            }
+        }return false;
     }
 }

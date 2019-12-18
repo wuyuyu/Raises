@@ -10,26 +10,26 @@ package projet_Raises;
  */
 
 public class Raises {
-    private String name;
     private String firstName;
+    private String lastName;
     private String ref;
     private String dateBuy;
     private String datePay;
 
-    public Raises(String name, String firstName, String ref, String dateBuy, String datePay) {
-        this.name = name;
+    public Raises(String firstName, String lastName, String ref, String dateBuy, String datePay) {
+        this.lastName = lastName;
         this.firstName = firstName;
         this.ref = ref;
         this.dateBuy = dateBuy;
         this.datePay = datePay;
     }
 
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -67,8 +67,8 @@ public class Raises {
     @Override
     public String toString() {
         return "Raises{" +
-                "name='" + name + '\'' +
-                ", firstName='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", ref='" + ref + '\'' +
                 ", dateBuy='" + dateBuy + '\'' +
                 ", datePay='" + datePay + '\'' +

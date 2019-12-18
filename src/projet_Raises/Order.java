@@ -69,7 +69,7 @@ public class Order {
             }
         }
         if (cmdNumber == 7) {
-            Create_Remove_Items.createAddItem(listItems);
+            Create_Remove_Items.createAddItem(listItems,listRaises);
         }
         if (cmdNumber == 8) {
             System.out.println("88888");
@@ -77,12 +77,26 @@ public class Order {
         if (cmdNumber == 9) {
         }
         if (cmdNumber == 10) {
+            if(!listItems.isEmpty()) {
+                for (Items items: listItems) {
+                    System.out.println(items);
+                }
+            }
+            else {
+                System.out.println("Item list is empty, please create the items.");
+            }
         }
         if (cmdNumber == 11) {
+            Create_Remove_Raises.createAddRaises(listUsers,listItems,listRaises);
         }
         if (cmdNumber == 12) {
         }
         if (cmdNumber == 13) {
+            if(!listRaises.isEmpty()){
+                for(Raises raises: listRaises){
+                    System.out.println(raises);
+                }
+            }
         }
         if (cmdNumber == 14) {
         }

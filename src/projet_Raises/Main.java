@@ -16,8 +16,6 @@ public class Main {
         List<Raises> listRaises = new ArrayList();
         Order.help();
 
-        User user = new User("nn","e","e",18,"dd");
-        System.out.println(user.toString());
         int ch;
         do {
             ch = Order.getUserChoice();

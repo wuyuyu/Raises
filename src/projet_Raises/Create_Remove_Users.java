@@ -11,7 +11,11 @@ public class Create_Remove_Users {
     private static int age;
 
     /**
-     *
+     *- La commande sera suivie de tous les paramètres définis plus haut pour un utilisateur
+     * - La commande doit créer en mémoire un nouvel utilisateur.
+     * - Un utilisateur devra être considéré comme déjà existant si le nom ET le prénom correspondent parfaitement à une entrée déjà enregistrée. Dans ce cas un message d'erreur s'affichera
+     * - La commande doit vérifier que les paramètres de types entiers sont bornés
+     * - La commande ajoutera l'utilisateur dans une liste si toutes les conditions sont correctes
      * @param listUsers
      */
     public static void createAddUser(List<User> listUsers) {
@@ -70,7 +74,7 @@ public class Create_Remove_Users {
         String firstName = f.next();
         System.out.println("Last name of the user who you wants to delete.");
         Scanner l = new Scanner(System.in);
-        String lastName = f.next();
+        String lastName = l.next();
 
             if (Finder.isUserExist(firstName, lastName, listUsers)) {
 
