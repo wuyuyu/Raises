@@ -22,24 +22,6 @@ public class Create_End_Raises {
             Scanner ct = new Scanner(System.in);
             String db = ct.nextLine();
 
-            /*
-            //- si la référence de l'objet n'existe pas on affiche une erreur.
-            for (Items items : listItems) {
-                if (!items.getReference().equals(ref)) {
-                    System.out.println("Error: the item is not exist, please try again.");
-                }
-            }
-            // - si l'objet est deja en cours d'utilisation, c'est à dire dans une entrée de la troisème table mais avec une date
-            // de rendu / date d'arrivée / date de fin non remplie, alors on affiche une erreur.
-            for (Raises raises : listRaises) {
-                if (raises.getRef().equals(ref)) {
-                    System.out.println("Error: the item is not available, please try again.");
-                }
-            }
-
-             */
-
-            //- si l'utilisateur n'existe pas on affiche une erreur.
             if(!Finder.isUserExist(firstName, lastName, listUsers)){
                 System.out.println("Error: the user do't exist, please try again.");
             }
@@ -58,14 +40,11 @@ public class Create_End_Raises {
                 Raises raiseCreated = new Raises(firstName,lastName,ref,db,"unpaid");
                 listRaises.add(raiseCreated);
                 System.out.println("First name: " + firstName + ", " + "Last name: " + lastName + ", " + "Reference: " + ref + ", " + "Date buy: " + db);
-
             }
-
         } catch (Exception e) {
             System.out.println("Error.");
             e.getMessage();
         }
-
     }
 
     /**
@@ -86,16 +65,15 @@ public class Create_End_Raises {
         Scanner d = new Scanner(System.in);
         String dp = d.nextLine();
         if(Finder.finTheRaiseInListRaise(ref,listRaises)!=null){ // reference existe dans la troisième table
-            if(!Finder.finTheRaiseInListRaise(ref, listRaises).getDatePay().equals("unpaid")){// il faut que cette référence ne possède pas de date de fin (deuxieme check)
+            if(Finder.finTheRaiseInListRaise(ref, listRaises).getDatePay().equals("unpaid")){// il faut que cette référence ne possède pas de date de fin (deuxieme check)
                 Finder.finTheRaiseInListRaise(ref,listRaises).setDatePay(dp);
+                System.out.println("Pay success!");
             }else {
                 System.out.println("Error: the reference of the item has been paid.");
             }
         }else {
             System.out.println("Error: the reference did't exist in the raises list.");
         }
-
-
     }
 
 
