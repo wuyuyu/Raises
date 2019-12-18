@@ -75,7 +75,7 @@ public class Order {
             Edit_Items.editItem(listItems);
         }
         if (cmdNumber == 9) {
-            Create_Remove_Items.removeItem();
+            //Create_Remove_Items.removeItem();
         }
         if (cmdNumber == 10) {
             if(!listItems.isEmpty()) {
