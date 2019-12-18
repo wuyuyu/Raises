@@ -4,7 +4,7 @@ package projet_Raises;
 import java.util.List;
 import java.util.Scanner;
 
-public class Create_Remove_Raises {
+public class Create_End_Raises {
 
 
     public static void createAddRaises (List<User> listUsers, List<Items> listItems,List<Raises> listRaises){
@@ -22,25 +22,36 @@ public class Create_Remove_Raises {
             Scanner ct = new Scanner(System.in);
             String db = ct.nextLine();
 
+            /*
+            //- si la référence de l'objet n'existe pas on affiche une erreur.
+            for (Items items : listItems) {
+                if (!items.getReference().equals(ref)) {
+                    System.out.println("Error: the item is not exist, please try again.");
+                }
+            }
+            // - si l'objet est deja en cours d'utilisation, c'est à dire dans une entrée de la troisème table mais avec une date
+            // de rendu / date d'arrivée / date de fin non remplie, alors on affiche une erreur.
+            for (Raises raises : listRaises) {
+                if (raises.getRef().equals(ref)) {
+                    System.out.println("Error: the item is not available, please try again.");
+                }
+            }
 
+             */
 
             //- si l'utilisateur n'existe pas on affiche une erreur.
             if(!Finder.isUserExist(firstName, lastName, listUsers)){
                 System.out.println("Error: the user do't exist, please try again.");
             }
             else{
-                //- si la référence de l'objet n'existe pas on affiche une erreur.
-                for (Items items : listItems) {
-                    if (!items.getReference().equals(ref)) {
-                        System.out.println("Error: the item is not exist, please try again.");
-                        break;
-                    }
-                }
-                // - si l'objet est deja en cours d'utilisation, c'est à dire dans une entrée de la troisème table mais avec une date
-                // de rendu / date d'arrivée / date de fin non remplie, alors on affiche une erreur.
-                for (Raises raises : listRaises) {
-                    if (raises.getRef().equals(ref)) {
-                        System.out.println("Error: the item is not available, please try again.");
+                for(Items items :listItems){
+                    for(Raises raises : listRaises){
+                        if (!items.getReference().equals(ref)) {
+                            System.out.println("Error: the item is not exist, please try again.");
+                        }
+                        if(raises.getRef().equals(ref)) {
+                            System.out.println("Error: the item is not available, please try again.");
+                        }
                         break;
                     }
                 }
@@ -50,8 +61,6 @@ public class Create_Remove_Raises {
 
             }
 
-
-
         } catch (Exception e) {
             System.out.println("Error.");
             e.getMessage();
@@ -59,4 +68,6 @@ public class Create_Remove_Raises {
 
     }
 
+    public static void endRaise() {
+    }
 }
