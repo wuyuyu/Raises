@@ -75,9 +75,72 @@ public class Create_Remove_Items {
         Scanner s = new Scanner(System.in);
         String ref = s.nextLine();
 
+        boolean isInRaisesList = false;
+        for (Raises raises: listRaises){
+            if(raises.getRef().equals(ref)){
+                isInRaisesList = true;
+            }
+        }
+
+
+try {
+    for (Items items : listItems) {
+        if (items.getReference().equals(ref)) {//existe
+
+            if (isInRaisesList) {
+                System.out.println("existe dans la liste de raises ne peut pas suprimmer");
+            } else {
+                listItems.remove(items);
+                System.out.println("deleted");
+            }
+              /*  for(Raises raises: listRaises){
+                    if(isInRaisesList){ //existe
+                        // ne supprime pas
+                        System.out.println("existe dans la liste de raises ne peut pas supprimer");
+                    }else {
+                        listItems.remove(items);
+                        System.out.println("succes");
+                    }
+                    System.out.println("liste raise");
+                }
+                System.out.println("existe de la merde ");*/
+
+        } else {
+            System.out.println("n'exsite pas dans la liste de Items");
+        }
+        System.out.println("c'est quoi");
+    }
+}catch (Exception e){
+    e.getMessage();
+    System.out.println("ça merde ");
+}
+
+
+        /*
+        for(Raises raises: listRaises){
+            if(raises.getRef().equals(ref)){ // existe
+                // ne le supprime pas
+                System.out.println("dans la liste de reaises, ne peux pas supprimer");
+            }else {
+                for(Items items:listItems){// boucler sur la liste de item
+                    if(items.getReference().equals(ref)){// si ref exist
+                        listItems.remove(items);
+                        System.out.println("your item has been removed with sucesse");
+
+                                //supprime
+                    }else {
+                        System.out.println("n'est pas dans la liste de item");
+                    }
+                }
+
+            }
+        }
+
+
+        /*
         for(Items items: listItems){
             if(items.getReference().equals(ref)){
-                if(Finder.findTheItemExistWithRefInListRaise(ref,listItems,listRaises)== null){
+                if(Finder.isTheItemExistWithRefInListRaise(ref,listItems,listRaises)){
                     System.out.println("This item can't be deleted, because his is in raise.");
                 }
                 else {

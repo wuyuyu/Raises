@@ -68,6 +68,29 @@ public class Create_End_Raises {
 
     }
 
-    public static void endRaise() {
+    /**
+     * - cette commande prend en paramètre la référence d'un objet
+     * - si cette référence n'existe pas dans la troisième table , alors on affiche une erreur
+     * - si cet objet n'est pas dans une entrée en cours, on affiche une erreur
+     * - si cet objet est actuellement dans une entrée en cours, alors on met a jour la date de fin (mettre une date aléatoire
+     * mais qui soit supérieure à la date départ)
+     * - afficher le récapitulatif de l'entrée (nom, prénom de l'utilisateur, ref de l'objet, date de debut, date de fin)
+     * @param listRaises
+     */
+    /*
+    public static void endRaise(List<Raises> listRaises) {
+        Scanner s = new Scanner(System.in);
+        String ref = s.nextLine();
+        if(Finder.finTheRaiseInListRaise(ref,listRaises)!=null){
+            if(){
+
+            }
+        }else {
+            System.out.println("The reference did't exist in the raises list.");
+        }
+
+
     }
+
+     */
 }

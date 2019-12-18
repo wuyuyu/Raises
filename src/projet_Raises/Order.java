@@ -91,7 +91,7 @@ public class Order {
             Create_End_Raises.createAddRaises(listUsers,listItems,listRaises);
         }
         if (cmdNumber == 12) {
-            Create_End_Raises.endRaise();
+            //Create_End_Raises.endRaise();
         }
         if (cmdNumber == 13) {
             if(!listRaises.isEmpty()){
