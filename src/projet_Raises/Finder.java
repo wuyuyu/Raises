@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class Finder {
 
     public static boolean isUserExist(String firstName, String lastName, List<User> userList){
-
-
         for (User user: userList){
             if(user.getFirstName().equals(firstName) && user.getName().equals(lastName)){
                 return true;

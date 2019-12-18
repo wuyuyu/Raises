@@ -72,7 +72,7 @@ public class Order {
             Create_Remove_Items.createAddItem(listItems,listRaises);
         }
         if (cmdNumber == 8) {
-            Edit_Items.editItem(listItems);
+            Edit_Items.editItem(listItems,listRaises);
         }
         if (cmdNumber == 9) {
             Create_Remove_Items.removeItem(listItems,listRaises);

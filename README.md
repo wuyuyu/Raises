@@ -238,8 +238,6 @@ Si un paramètre manque, un message d'erreur devra s'afficher.
 [#6] listusers
 - affiche tous les utilisateurs
 
-
-
 [#7] addbook / addcar / additem / Addpacket / addhouse / addstock
 - ajoute un objet dans la liste conformément à la deuxième table (respectivement Livres, Voitures, Objets, Colis, Maisons, Actions)
 - la commande prend tous les champs décrits dans la table plus haut
@@ -261,10 +259,8 @@ Si un paramètre manque, un message d'erreur devra s'afficher.
 - si l'objet existe, il est supprimé de la liste en mémoire, et on affiche un message de réussite de l'effacement.
 - si l'objet est utilisé dans la troisième table (emprunts, locations, enchères, livraisons, actions, transactions), alors l'effacement de cet objet ne pourra pas se faire et un message d'erreur sera affiché
 
-[#9] listbooks / listcars / listitems / listpackets / listhouses / liststocks
+[#10] listbooks / listcars / listitems / listpackets / listhouses / liststocks
 - affiche tous les objets enregistrés
-
-
 
 [#11] createborrow / createrent / createraise / createdelivery / createsale / createpurchase
 - cette commande prend en paramètre le prénom et le nom d'un utilisateur ainsi que la référence de l'objet associé
@@ -281,12 +277,10 @@ Si un paramètre manque, un message d'erreur devra s'afficher.
 - si cet objet est actuellement dans une entrée en cours, alors on met a jour la date de fin (mettre une date aléatoire mais qui soit supérieure à la date départ)
 - afficher le récapitulatif de l'entrée (nom, prénom de l'utilisateur, ref de l'objet, date de debut, date de fin)
 
-[#12] listborrow / listrent / listraise / listdelivery / listsale / listpurchase
+[#13] listborrow / listrent / listraise / listdelivery / listsale / listpurchase
 - cette commande affiche la liste des entrées (troisième table)
 - vous êtes libres du formalisme d'affichage mais toutes les informations doivent apparaitre
 - nom et prénom de l'utilisateur, infos de l'objet + référence + dates de début et de fin
-
-
 
 [#14] save
 - cette commande va sauvegarder toutes vos données liés aux utilisateurs, objets et entrées de la troisième tables sur le disque dur dans des fichiers.
