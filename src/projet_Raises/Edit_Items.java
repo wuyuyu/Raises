@@ -40,7 +40,7 @@ public class Edit_Items {
 
         for (Items items : listItems) {
             if (items.getReference().equals(ref)) {//l'objet exist
-                if (isRefExistInRaise) {//l'objet n'existe pas dans la troisime tableau
+                if (!isRefExistInRaise) {//l'objet n'existe pas dans la troisime tableau
                     System.out.println("Edit the title, step 'Enter' for keep the same.");
                     Scanner t = new Scanner(System.in);
                     String title = t.nextLine();
