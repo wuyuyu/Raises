@@ -77,20 +77,26 @@ public class Create_End_Raises {
      * - afficher le récapitulatif de l'entrée (nom, prénom de l'utilisateur, ref de l'objet, date de debut, date de fin)
      * @param listRaises
      */
-    /*
+
     public static void endRaise(List<Raises> listRaises) {
+        System.out.println("Enter the reference of raise that you want to pay.");
         Scanner s = new Scanner(System.in);
         String ref = s.nextLine();
-        if(Finder.finTheRaiseInListRaise(ref,listRaises)!=null){
-            if(){
-
+        System.out.println("Enter the date the you wants to pay.");
+        Scanner d = new Scanner(System.in);
+        String dp = d.nextLine();
+        if(Finder.finTheRaiseInListRaise(ref,listRaises)!=null){ // reference existe dans la troisième table
+            if(!Finder.finTheRaiseInListRaise(ref, listRaises).getDatePay().equals("unpaid")){// il faut que cette référence ne possède pas de date de fin (deuxieme check)
+                Finder.finTheRaiseInListRaise(ref,listRaises).setDatePay(dp);
+            }else {
+                System.out.println("Error: the reference of the item has been paid.");
             }
         }else {
-            System.out.println("The reference did't exist in the raises list.");
+            System.out.println("Error: the reference did't exist in the raises list.");
         }
 
 
     }
 
-     */
+
 }
