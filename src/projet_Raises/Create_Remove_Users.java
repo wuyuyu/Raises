@@ -68,7 +68,7 @@ public class Create_Remove_Users {
      * @param listUsers
      */
 
-    public static void removeUser(List<User> listUsers){
+    public static void removeUser(List<User> listUsers,List<Raises> listRaise){
         System.out.println("First name of the user who you wants to delete.");
         Scanner f = new Scanner(System.in);
         String firstName = f.next();
@@ -77,18 +77,22 @@ public class Create_Remove_Users {
         String lastName = l.next();
 
             if (Finder.isUserExist(firstName, lastName, listUsers)) {
+                /**
+                * si l'utilisateur est utilisé dans la troisième table enchères,,
+                *  alors l'effacement de cet utilisateur ne pourra pas se faire et un message d'erreur sera affiché
+                 *  */
+                if(Finder.isUserExistInRaisesList(firstName,lastName,listRaise)){
+                    System.out.println("The user have a raise, you can't delete the user. ");
 
+                }else {
                     listUsers.remove(Finder.findTheUserExistInList(firstName, lastName, listUsers));
                     System.out.println("The user has been deleted. ");
+                }
 
             } else {
                 System.out.println("Error: the user is not found in our list users, please try again.");
             }
 
-        /**
-         * !!!!!!!!!!!!!!!!!!!!
-         * si l'utilisateur est utilisé dans la troisième table enchères,,
-         * alors l'effacement de cet utilisateur ne pourra pas se faire et un message d'erreur sera affiché
-         */
+
     }
 }

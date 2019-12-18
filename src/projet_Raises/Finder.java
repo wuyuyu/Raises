@@ -42,4 +42,28 @@ public class Finder {
             }
         }return false;
     }
+
+
+    public static boolean isUserExistInRaisesList(String firstName, String lastName, List<Raises> listRaise) {
+        for(Raises raises: listRaise){
+            if(raises.getFirstName().equals(firstName) && raises.getLastName().equals(lastName)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public static Items findTheItemExistWithRefInListRaise(String ref, List<Items> listItems,List<Raises> listRaises) {
+        Items items = null;
+        for(Raises raises: listRaises) // parcourir dans la liste raises
+            if(raises.getRef().equals(ref)){ // la referene trouvé dans la liste raises
+               for(Items itemsFound: listItems){
+                   if(itemsFound.getReference().equals(ref)){
+                       items = itemsFound;
+                   }
+               }
+            }
+        return items;
+    }
 }

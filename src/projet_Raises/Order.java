@@ -16,9 +16,9 @@ public class Order {
         System.out.println("step 5 to remove a user.");
         System.out.println("step 6 to list all user.");
         System.out.println("step 7 to add a item.");
-        System.out.println("step 8 to edited a object.");
-        System.out.println("Step 9 to remove a object. ");
-        System.out.println("Step 10 to list all objects.");
+        System.out.println("step 8 to edited a item.");
+        System.out.println("Step 9 to remove a item. ");
+        System.out.println("Step 10 to list all item.");
         System.out.println("Step 11 to create a raise.");
         System.out.println("Step 12 to end a raise.");
         System.out.println("Step 13 to list all raises.");
@@ -56,7 +56,7 @@ public class Order {
             Edit_User.editUser(listUsers);
         }
         if (cmdNumber == 5) {
-            Create_Remove_Users.removeUser(listUsers);
+            Create_Remove_Users.removeUser(listUsers,listRaises);
         }
         if (cmdNumber == 6) {
             if(!listUsers.isEmpty()) {
@@ -75,7 +75,7 @@ public class Order {
             Edit_Items.editItem(listItems);
         }
         if (cmdNumber == 9) {
-            //Create_Remove_Items.removeItem();
+            Create_Remove_Items.removeItem(listItems,listRaises);
         }
         if (cmdNumber == 10) {
             if(!listItems.isEmpty()) {
