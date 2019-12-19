@@ -1,9 +1,6 @@
 package projet_Raises;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 
@@ -50,7 +47,69 @@ public class Save_Restore {
         }
     }
 
+
     public static void restore(List<User> listUsers, List<Items> listItems, List<Raises> listRaises){
+
+        // lire les 3 fichiers
+
+
+        String fichier ="save.txt";
+
+
+            //lecture du fichier texte
+            try{
+
+                BufferedReader br = new BufferedReader(new FileReader(fichier));
+                String line;
+                while ((line = br.readLine())!=null){
+                    if(fichier.startsWith("User")){
+                        String[] st = line.split( ", ");
+                        System.out.println("Nom = "+st[1]);
+                    }
+
+
+                    if (line.split())
+                    {
+
+                    }
+                    chaine+=ligne+"\n";
+                }
+                br.close();
+            }
+            catch (Exception e){
+                System.out.println(e.toString());
+            }
+
+            /*
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                while (data.startsWith("user")){
+                    data.v
+
+                    if(data.startsWith("firstName='")){
+                        listUsers.add()
+                    }
+
+
+                }
+
+                System.out.println(data);
+            }
+
+             */
+            /*
+            try {
+                File f = new File("save.txt");
+                Scanner myReader = new Scanner(f);
+                myReader.close();
+        } catch (FileNotFoundException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+
+             */
+
+        // add dans les lists
 
 
     }
