@@ -24,17 +24,17 @@ public class Save_Restore {
             String toStringUser;
             String toStringItems;
             String toStringRaises;
-            for(User user: listUsers){
+            for (User user : listUsers) {
                 toStringUser = user.toString();
                 myWriter.write(toStringUser);
                 myWriter.write("\n");
             }
-            for(Items items: listItems){
+            for (Items items : listItems) {
                 toStringItems = items.toString();
                 myWriter.write(toStringItems);
                 myWriter.write("\n");
             }
-            for(Raises raises: listRaises){
+            for (Raises raises : listRaises) {
                 toStringRaises = raises.toString();
                 myWriter.write(toStringRaises);
                 myWriter.write("\n");
@@ -48,19 +48,76 @@ public class Save_Restore {
     }
 
 
-    public static void restore(List<User> listUsers, List<Items> listItems, List<Raises> listRaises){
+    public static void restore(List<User> listUsers, List<Items> listItems, List<Raises> listRaises) {
 
         // lire les 3 fichiers
 
+        //lecture du fichier texte
+        try {
+            File save = new File("save.txt");
+            Scanner scSave = new Scanner(save);
+            //FileReader fr = new FileReader("save.txt");
+            //BufferedReader br = new BufferedReader(fr);
 
-        String fichier ="save.txt";
+            while (scSave.hasNextLine()) {
+                String data = scSave.nextLine();
+               // System.out.println(data);
+                //System.out.println(scSave.toString());
+
+                if (data.startsWith("User")){
+                    System.out.println(data);
+
+                }
+
+            }
 
 
-            //lecture du fichier texte
-            try{
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (Exception eAll){
+            eAll.getMessage();
+        }
+    }
+}
 
-                BufferedReader br = new BufferedReader(new FileReader(fichier));
-                String line;
+
+
+                /*
+                if (save.exists()) {
+                    System.out.println("existe");
+                    System.out.println(fr.toString().toString());
+                    while (fr.toString().startsWith("User")) {
+                        String[] st = fr.toString().split(", ");
+                        User user = new User(st[0], st[1], st[2], Integer.parseInt(st[3]), st[4]);
+                        listUsers.add(user);
+                        System.out.println(user);
+                    }
+                }
+            } catch (FileNotFoundException Throwable e;
+            e) {
+                e.printStackTrace();
+            }
+
+            } catch(Exception e1){
+                System.out.println(e1.toString());
+            }
+
+
+            // add dans les lists
+
+
+    String [] = data. data.startsWith("='") && data.endsWith("',")
+
+                    String[] st = data.split(", ");
+                    User user = new User(st[0], st[1], st[2], Integer.parseInt(st[3]), st[4]);
+                    listUsers.add(user);
+
+                     
+
+
+    }
+}
+                /*
                 while ((line = br.readLine())!=null){
                     if(fichier.startsWith("User")){
                         String[] st = line.split( ", ");
@@ -76,13 +133,9 @@ public class Save_Restore {
                 }
                 br.close();
             }
-            catch (Exception e){
-                System.out.println(e.toString());
-            }
 
-            /*
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
+
+
                 while (data.startsWith("user")){
                     data.v
 
@@ -96,24 +149,8 @@ public class Save_Restore {
                 System.out.println(data);
             }
 
-             */
-            /*
+
             try {
                 File f = new File("save.txt");
                 Scanner myReader = new Scanner(f);
-                myReader.close();
-        } catch (FileNotFoundException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
-
-             */
-
-        // add dans les lists
-
-
-    }
-
-
-
-}
+                myReader.close();*/
