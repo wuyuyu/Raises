@@ -84,14 +84,10 @@ public class Edit_Items {
                     items.setRarity(rarity);
                     System.out.println("your item has been edited with success!");
                     System.out.println("title: " + title + " ,reference: " + refNew + " , category: " + category + " ,rarity: " + rarity);
-
-
                 } else {
                     //l'objet existe dans la 3ème tableau
                     System.out.println("The item can't be edit because it exist in raise list. ");
                 }
-
-
             } else {
                 System.out.println("objet n'existe pas ");
             }

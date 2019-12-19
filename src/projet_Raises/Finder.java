@@ -52,39 +52,6 @@ public class Finder {
     }
 
 
-    /**
-     * !!!!!!!!!!!!!!!!!
-     * ça ne marche pas!!!!!
-     * @param ref
-     * @param listItems
-     * @param listRaises
-     * @return
-     */
-    public static boolean isTheItemExistWithRefInListRaise(String ref,List<Items> listItems,List<Raises> listRaises){
-
-        for(Raises raises: listRaises) // parcourir dans la liste raises
-            if(raises.getRef().equals(ref)){ // la referene trouvé dans la liste raises
-                for(Items itemsFound: listItems){
-                    if(itemsFound.getReference().equals(ref)){
-                        return true;
-                    }
-                }
-            }
-        return false;
-    }
-    public static Items findTheItemExistWithRefInListRaise(String ref, List<Items> listItems,List<Raises> listRaises) {
-        Items items = null;
-        for(Raises raises: listRaises) // parcourir dans la liste raises
-            if(raises.getRef().equals(ref)){ // la referene trouvé dans la liste raises
-               for(Items itemsFound: listItems){
-                   if(itemsFound.getReference().equals(ref)){
-                       items = itemsFound;
-                   }
-               }
-            }
-        return items;
-    }
-
     public static Raises finTheRaiseInListRaise(String ref,List<Raises> listRaises) {
         Raises r = null;
         for(Raises raises: listRaises){

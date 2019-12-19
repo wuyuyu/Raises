@@ -106,8 +106,7 @@ public class Order {
             Save_Restore.save(listUsers,listItems,listRaises);
         }
         if (cmdNumber == 15) {
-            Save_Restore.readTable(listUsers,listItems,listRaises);
-            //Save_Restore.restore(listUsers,listItems,listRaises);
+            Save_Restore.restore(listUsers,listItems,listRaises);
         }
 
     }

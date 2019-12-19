@@ -55,34 +55,6 @@ public class Save_Restore {
 
     }
 
-    private static void readFile(){
-        // pour lire le fichier save
-        try {
-            File f = new File("save.txt");
-            Scanner myReader = new Scanner(f);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-    }
-
-    public static String readTable(List<User> listUsers, List<Items> listItems, List<Raises> listRaises){
-        // lire les 3 tableaux et les transformer en ligne
-        // parcourir les 3 table
-        String tostring = null;
-        for(User user: listUsers){
-            System.out.println(user);
-            tostring = user.toString();
-        }
-
-        return tostring;
-
-    }
 
 
 }

@@ -94,13 +94,5 @@ public class Edit_User {
         } else {
             System.out.println("Error: the user is not found in our list users, please try again.");
         }
-
-        /**
-         * !!!!!!!!!!!!!!!!!!!!
-         * si l'utilisateur est utilisé dans la troisième table enchères,,
-         * alors l'effacement de cet utilisateur ne pourra pas se faire et un message d'erreur sera affiché
-         */
-
     }
-
 }

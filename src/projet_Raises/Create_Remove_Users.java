@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class Create_Remove_Users {
     public Create_Remove_Users() {
     }
-
-
     private static int age;
 
     /**
@@ -61,8 +59,6 @@ public class Create_Remove_Users {
 
     }
 
-
-
     /**
      *
      * @param listUsers
@@ -76,7 +72,7 @@ public class Create_Remove_Users {
         Scanner l = new Scanner(System.in);
         String lastName = l.next();
 
-            if (Finder.isUserExist(firstName, lastName, listUsers)) {
+        if (Finder.isUserExist(firstName, lastName, listUsers)) {
                 /**
                 * si l'utilisateur est utilisé dans la troisième table enchères,,
                 *  alors l'effacement de cet utilisateur ne pourra pas se faire et un message d'erreur sera affiché
@@ -90,9 +86,7 @@ public class Create_Remove_Users {
                 }
 
             } else {
-                System.out.println("Error: the user is not found in our list users, please try again.");
-            }
-
-
+            System.out.println("Error: the user is not found in our list users, please try again.");
+        }
     }
 }

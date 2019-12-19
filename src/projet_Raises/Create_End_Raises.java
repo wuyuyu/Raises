@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Create_End_Raises {
 
-
     public static void createAddRaises (List<User> listUsers, List<Items> listItems,List<Raises> listRaises){
         try {
             System.out.println("Enter your first name: ");
@@ -76,6 +75,4 @@ public class Create_End_Raises {
             System.out.println("Error: the reference did't exist in the raises list.");
         }
     }
-
-
 }
