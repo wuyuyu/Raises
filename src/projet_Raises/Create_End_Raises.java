@@ -39,7 +39,8 @@ public class Create_End_Raises {
                 }
                 Raises raiseCreated = new Raises(firstName,lastName,ref,db,"unpaid");
                 listRaises.add(raiseCreated);
-                System.out.println("First name: " + firstName + ", " + "Last name: " + lastName + ", " + "Reference: " + ref + ", " + "Date buy: " + db);
+                System.out.println("Your raise has been create with success, detail:");
+                System.out.println("First name: " + firstName + "\n " + "Last name: " + lastName + "\n " + "Reference: " + ref + "\n " + "Date buy: " + db);
             }
         } catch (Exception e) {
             System.out.println("Error.");

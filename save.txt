@@ -1,1 +1,7 @@
-User{firstName='sdfgh', name='ze', country='dfgh', age=33, specialty='sdfgh'}
+User{firstName='sf', name='azereghtr', country='zfegrh', age=11, specialty='dsfg'}
+User{firstName='sfgh', name='zg', country='12', age=11, specialty='12'}
+User{firstName='a', name='a', country='sdf', age=12, specialty='sdf'}
+Items{title='sq', reference='dsq', category='z', rarity=2}
+Items{title='sdfg', reference='1', category='qsdfg', rarity=1}
+Items{title='aze', reference='2', category='sdfg', rarity=1}
+Raises{firstName='a', lastName='a', ref='1', dateBuy='qsdf', datePay='unpaid'}

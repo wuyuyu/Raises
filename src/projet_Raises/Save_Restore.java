@@ -24,11 +24,24 @@ public class Save_Restore {
                 System.out.println("File created. path= " + f.getAbsolutePath());
             }
             FileWriter myWriter = new FileWriter("save.txt");
-
-            // lire les 3 tableaux
-
-            myWriter.write(readTable(listUsers,listItems,listRaises));
-
+            String toStringUser;
+            String toStringItems;
+            String toStringRaises;
+            for(User user: listUsers){
+                toStringUser = user.toString();
+                myWriter.write(toStringUser);
+                myWriter.write("\n");
+            }
+            for(Items items: listItems){
+                toStringItems = items.toString();
+                myWriter.write(toStringItems);
+                myWriter.write("\n");
+            }
+            for(Raises raises: listRaises){
+                toStringRaises = raises.toString();
+                myWriter.write(toStringRaises);
+                myWriter.write("\n");
+            }
 
             myWriter.close();
             System.out.println("All data has been successfully save to the file.");
@@ -66,8 +79,8 @@ public class Save_Restore {
             System.out.println(user);
             tostring = user.toString();
         }
-        String tostring1 = tostring;
-        return tostring1;
+
+        return tostring;
 
     }
 
