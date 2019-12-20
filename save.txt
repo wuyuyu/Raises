@@ -1,4 +1,0 @@
-User{firstName='a', name='q', country='qs', age=22, specialty='qsdf'}
-User{firstName='dfq', name='qgr', country='eg', age=11, specialty='zerfg'}
-Items{title='ze', reference='1', category='sd', rarity=22}
-Raises{firstName='a', lastName='q', ref='1', dateBuy='sdf', datePay='unpaid'}
