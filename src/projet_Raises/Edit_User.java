@@ -45,7 +45,7 @@ public class Edit_User {
             do {
 
                 try {
-                    System.out.println("Edit your age (between 18 and 99), step 'Enter' for keep the same age. ");
+                    System.out.println("Edit your age (between 10 and 99), step 'Enter' for keep the same age. ");
                     Scanner a = new Scanner(System.in);
                     String s = a.nextLine();
                     if(s.equals("")){
@@ -61,7 +61,7 @@ public class Edit_User {
                     System.out.println("Error, please enter a number. ");
                     e.getMessage();
                 }
-            } while (ag < 18 || ag > 99 );
+            } while (ag < 10 || ag > 99 );
             System.out.println("Edit your specialty, step 'Enter' for keep the same specialty.");
             Scanner ns = new Scanner(System.in);
             String specialty = ns.nextLine();
@@ -82,6 +82,7 @@ public class Edit_User {
 
             userWantEdit.setFirstName(firstNameNew);
             userWantEdit.setName(lastNameNew);
+            userWantEdit.setAge(ag);
             userWantEdit.setCountry(country);
             userWantEdit.setSpecialty(specialty);
 

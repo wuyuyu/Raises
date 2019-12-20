@@ -19,18 +19,18 @@ public class Create_Remove_Users {
     public static void createAddUser(List<User> listUsers) {
 
         try {
-            System.out.println("Enter your first name: ");
+            System.out.println("Enter your first name === Entrez votre Prénom: ");
             Scanner sc = new Scanner(System.in);
             String firstName = sc.next();
-            System.out.println("Enter your last name: ");
+            System.out.println("Enter your last name === Entrez votre nom: ");
             Scanner scan = new Scanner(System.in);
             String name = scan.next();
-            System.out.println("Enter your country: ");
+            System.out.println("Enter your country === Entrez votre pays: ");
             Scanner ct = new Scanner(System.in);
             String country = ct.next();
             do {
                 try {
-                    System.out.println("Enter your age (between 10 and 99): ");
+                    System.out.println("Enter your age (between 10 and 99) === Entrez votre age (entre 10 et 99): ");
                     Scanner a = new Scanner(System.in);
                     String ag = a.next();
                     age = Integer.parseInt(ag);

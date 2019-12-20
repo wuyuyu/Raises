@@ -21,17 +21,17 @@ public class Create_End_Raises {
 
     public static void createAddRaises (List<User> listUsers, List<Items> listItems,List<Raises> listRaises) {
         try {
-            System.out.println("Create a raise");
-            System.out.println("Enter your first name: ");
+            System.out.println("Create a raise === Créér une enchère");
+            System.out.println("Enter your first name === Entrez votre prénom: ");
             Scanner sc = new Scanner(System.in);
             String firstName = sc.nextLine();
-            System.out.println("Enter your last name: ");
+            System.out.println("Enter your last name === Entrez votre nom: ");
             Scanner s = new Scanner(System.in);
             String lastName = s.nextLine();
-            System.out.println("Enter the reference of your item : ");
+            System.out.println("Enter the reference of your item === Entrez la référene de votre objet: ");
             Scanner scan = new Scanner(System.in);
             String ref = scan.nextLine();
-            System.out.println("Enter the date of purchase: ");
+            System.out.println("Enter the date of purchase === Entrez la date d'achat: ");
             Scanner ct = new Scanner(System.in);
             String db = ct.nextLine();
 
@@ -51,21 +51,21 @@ public class Create_End_Raises {
 
             if(!Finder.isUserExist(firstName, lastName, listUsers)){// user didn't exist
                 //error
-                System.out.println("Error: the user don't exist, please try again.");
+                System.out.println("Error: the user don't exist, please try again === Erreur: l'acheteur n'existe pas");
             }
             else {
                 if(!isINListItem){//item didn't exist
                     //error
-                    System.out.println("Error: the item is not exist, please try again.");
+                    System.out.println("Error: the item is not exist, please try again === Erreur: l'objet n'existe pas.");
                 }else{
                     if(isInRaisesList){//item exist already in the list raises dans la liste raise
                         //error
-                        System.out.println("Error: the item is not available, please try again.");
+                        System.out.println("Error: the item is not available, please try again === Erreur: l'objet n'est pas disponible.");
                     }else{
                         //creation
                         Raises raiseCreated = new Raises(firstName, lastName, ref, db, "unpaid");
                         listRaises.add(raiseCreated);
-                        System.out.println("Your raise has been create with success, detail:");
+                        System.out.println("Your raise has been create with success, detail === Votre enchère a été bien créé:");
                         System.out.println("First name: " + firstName + "\n " + "Last name: " + lastName + "\n " + "Reference: " + ref + "\n " + "Date buy: " + db);
 
                     }
@@ -93,21 +93,21 @@ public class Create_End_Raises {
      */
 
     public static void endRaise(List<Raises> listRaises) {
-        System.out.println("Enter the reference of raise that you want to pay.");
+        System.out.println("Enter the reference of raise that you want to pay === Entrez la référence de l'objet que vous voulez régler.");
         Scanner s = new Scanner(System.in);
         String ref = s.nextLine();
-        System.out.println("Enter the date the you wants to pay.");
+        System.out.println("Enter the date the you wants to pay === Entrez la date que réglement.");
         Scanner d = new Scanner(System.in);
         String dp = d.nextLine();
         if(Finder.findTheRaiseInListRaise(ref,listRaises)!=null){ // reference existe dans la troisième table
             if(Finder.findTheRaiseInListRaise(ref, listRaises).getDatePay().equals("unpaid")){// il faut que cette référence ne possède pas de date de fin (deuxieme check)
                 Finder.findTheRaiseInListRaise(ref,listRaises).setDatePay(dp);
-                System.out.println("Pay success!");
+                System.out.println("Pay success === Paiement accepté!");
             }else {
-                System.out.println("Error: the reference of the item has been paid.");
+                System.out.println("Error: the reference of the item has been paid === Erreur: cet objet est déjà payé.");
             }
         }else {
-            System.out.println("Error: the reference did't exist in the raises list.");
+            System.out.println("Error: the reference did't exist in the raises list === Erreur: la référende n'existe pas dans la liste d'enchère.");
         }
     }
 }

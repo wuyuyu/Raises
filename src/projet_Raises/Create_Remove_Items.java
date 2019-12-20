@@ -14,48 +14,57 @@ import java.util.Scanner;
 
 
 public class Create_Remove_Items {
+
     private static int rarity;
 
     public static void createAddItem(List<Items> listItems, List<Raises> listRaise) {
-        System.out.println("Add a item");
+        System.out.println("Add a item === Ajouter un objet");
 
         try {
-            System.out.println("Enter the title of your object: ");
+            System.out.println("Enter the title of your object ===  Entrez le titre de votre objet: ");
             Scanner sc = new Scanner(System.in);
             String title = sc.next();
-            System.out.println("Enter the reference of your object: ");
+            System.out.println("Enter the reference of your object === Entrez la référence de votre objet: ");
             Scanner scan = new Scanner(System.in);
             String reference = scan.next();
-            System.out.println("Enter the category of your object: ");
+            System.out.println("Enter the category of your object === Entrez le catégory de votre objet: ");
             Scanner ct = new Scanner(System.in);
             String category = ct.next();
 
-            try {
-                System.out.println("Enter the rarity of your object (between 0 and 100): ");
-                Scanner a = new Scanner(System.in);
-                String ag = a.next();
-                rarity = Integer.parseInt(ag);
 
-                if (rarity >= 0 && rarity <= 100)
-
+            do {
+                try {
+                    System.out.println("Enter the rarity of your object (between 0 and 100) === Entrez la rareté de votre objet: ");
+                    Scanner a = new Scanner(System.in);
+                    String ag = a.next();
+                    rarity = Integer.parseInt(ag);
                     if (!Finder.isReferenceExistInListRaises(reference, listRaise)) { // if ref not exist
                         Items createAddItem = new Items(title, reference, category, rarity);
                         listItems.add(createAddItem);
-                        System.out.println("The item has been created with success!");
+                        System.out.println("The item has been created with success === L'objet a bien été enregistré!");
                         System.out.println(createAddItem);
 
-                    } else {
-                        System.out.println("Error: the item is not available.");
+                    } else { // ref of item exist in the list raises already
+                        System.out.println("Error: the item is not available === Erreur: l'objet n'est plus disponible, il est déjà acheté par une autre personne.");
                     }
-            } catch (NumberFormatException ex) {
-                System.out.println("Error: please enter a number. ");
-                ex.getMessage();
+                    System.out.println("Error: the number of rarity must between 0 and 100");
+                } catch (NumberFormatException ex) {
+                    System.out.println("Error: please enter a number === Erreur: Veuillez entrez un nombre. ");
+                    ex.getMessage();
+                }
+
+            }while (rarity < 0 || rarity > 100 /** || manque!!!!!!!! si rareté est une chaine de caractere*/);
+
+
+
+
+
+        }catch (Exception e) {
+                e.getMessage();
             }
-        } catch (Exception e) {
-            e.getMessage();
-        }
 
     }
+    
 
 
     /**
@@ -69,7 +78,7 @@ public class Create_Remove_Items {
 
     public static void removeItem(List<Items> listItems, List<Raises> listRaises) {
 
-        System.out.println("The reference of the item that you wants to delete: ");
+        System.out.println("The reference of the item that you wants to delete === Entrez la référence de l'objet que vous voulez supprimer: ");
         Scanner s = new Scanner(System.in);
         String ref = s.nextLine();
 
@@ -84,13 +93,13 @@ public class Create_Remove_Items {
             for (Items items : listItems) {
                 if (items.getReference().equals(ref)) {
                     if (isInRaisesList) {
-                        System.out.println("The item can't be remove because it exist in the raises list.");
+                        System.out.println("The item can't be remove because it exist in the raises list === L'objet vendu, il ne peut plus être supprimé.");
                     } else {
                         listItems.remove(items);
-                        System.out.println("The item has been deleted with success.");
+                        System.out.println("The item has been deleted with success === L'objet supprimé.");
                     }
                 } else {
-                    System.out.println("n'exsite pas dans la liste de Items");
+                    System.out.println("n'exsite pas dans la liste de Items === L'objet que vous avez saisie n'existe pas");
                 }
             }
         } catch (Exception e) {
