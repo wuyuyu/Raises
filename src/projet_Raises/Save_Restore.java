@@ -15,32 +15,45 @@ public class Save_Restore {
      */
 
     public static void save(List<User> listUsers, List<Items> listItems, List<Raises> listRaises) {
-        File f = new File("save.txt");
+        File fu = new File("saveUser.txt");
+        File fi = new File("saveItem.txt");
+        File fr = new File("saveRaise.txt");
+        String toStringUser;
+        String toStringItems;
+        String toStringRaises;
         try {
-            if (f.createNewFile()) {
-                System.out.println("File created. path= " + f.getAbsolutePath());
+            if (fu.createNewFile()) {
+                System.out.println("File created. path= " + fu.getAbsolutePath());
             }
-            FileWriter myWriter = new FileWriter("save.txt");
-            String toStringUser;
-            String toStringItems;
-            String toStringRaises;
+            if (fi.createNewFile()) {
+                System.out.println("File created. path= " + fi.getAbsolutePath());
+            }
+            if (fr.createNewFile()) {
+                System.out.println("File created. path= " + fr.getAbsolutePath());
+            }
+            FileWriter myWriterUser = new FileWriter("saveUser.txt");
+            FileWriter myWriterItem = new FileWriter("saveItem.txt");
+            FileWriter myWriterRaise = new FileWriter("saveRaise.txt");
+
             for (User user : listUsers) {
-                toStringUser = user.toString();
-                myWriter.write(toStringUser);
-                myWriter.write("\n");
+                toStringUser = user.getFirstName()+","+user.getName()+","+user.getCountry()+","+user.getAge()+","+user.getSpecialty();
+                myWriterUser.write(toStringUser);
+                myWriterUser.write("\n");
             }
             for (Items items : listItems) {
-                toStringItems = items.toString();
-                myWriter.write(toStringItems);
-                myWriter.write("\n");
+                toStringItems = items.getTitle()+","+items.getReference()+","+items.getCategory()+","+items.getRarity();
+                myWriterItem.write(toStringItems);
+                myWriterItem.write("\n");
             }
             for (Raises raises : listRaises) {
-                toStringRaises = raises.toString();
-                myWriter.write(toStringRaises);
-                myWriter.write("\n");
+                toStringRaises = raises.getFirstName()+","+raises.getLastName()+","+raises.getRef()+","+raises.getDateBuy()+","+raises.getDatePay();
+                myWriterRaise.write(toStringRaises);
+                myWriterRaise.write("\n");
             }
 
-            myWriter.close();
+            myWriterUser.close();
+            myWriterItem.close();
+            myWriterRaise.close();
             System.out.println("All data has been successfully save to the file.");
         } catch (IOException e) {
             e.printStackTrace();
