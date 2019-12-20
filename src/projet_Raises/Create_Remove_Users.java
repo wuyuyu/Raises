@@ -35,21 +35,21 @@ public class Create_Remove_Users {
                     String ag = a.next();
                     age = Integer.parseInt(ag);
                 }catch (NumberFormatException e){
-                    System.out.println("Error, please enter a number for your age. ");
+                    System.out.println("Error, please enter a number for your age === Erreur: age est un nombre. ");
                     e.getMessage();
                 }
             } while (age < 10 || age > 99);
-            System.out.println("Enter your specialty: ");
+            System.out.println("Enter your specialty === Entrez otre spécialité: ");
             Scanner s = new Scanner(System.in);
             String specialty = s.next();
             User createAddUser = new User(firstName, name, country, age, specialty);
 
             if(!Finder.isUserExist(firstName, name, listUsers)){
                 listUsers.add(createAddUser);
-                System.out.println("The user has been created with success!");
+                System.out.println("The user has been created with success === Votre compte est créé!");
             }
             else{
-                System.out.println("Error: the user exist already, please try again.");
+                System.out.println("Error: the user exist already, please try again === Erreur: le compte est déjà existé.");
             }
 
         } catch (Exception e) {
@@ -69,10 +69,10 @@ public class Create_Remove_Users {
      */
 
     public static void removeUser(List<User> listUsers,List<Raises> listRaise){
-        System.out.println("First name of the user who you wants to delete.");
+        System.out.println("First name of the user who you wants to delete === Le prénom du compte que vous voulez supprimer.");
         Scanner f = new Scanner(System.in);
         String firstName = f.next();
-        System.out.println("Last name of the user who you wants to delete.");
+        System.out.println("Last name of the user who you wants to delete === Le nom du compte que vous voulez supprimer.");
         Scanner l = new Scanner(System.in);
         String lastName = l.next();
 
@@ -82,15 +82,15 @@ public class Create_Remove_Users {
                  * then the deletion of this user cannot be done and an error message will be displayed
                  */
                 if(Finder.isUserExistInRaisesList(firstName,lastName,listRaise)){
-                    System.out.println("The user have a raise, you can't delete the user. ");
+                    System.out.println("The user have a raise, you can't delete the user === Cette compte est lié à une enchère, vous ne pouvez pas la supprimer. ");
 
                 }else {
                     listUsers.remove(Finder.findTheUserExistInList(firstName, lastName, listUsers));
-                    System.out.println("The user has been deleted. ");
+                    System.out.println("The user has been deleted === le compte est bien supprimé. ");
                 }
 
             } else {
-            System.out.println("Error: the user is not found in our list users, please try again.");
+            System.out.println("Error: the user is not found in our list users, please try again === Erreur: le compte n'existe pas.");
         }
     }
 }

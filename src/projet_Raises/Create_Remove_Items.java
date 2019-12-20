@@ -48,19 +48,16 @@ public class Create_Remove_Items {
                         } else { // ref of item exist in the list raises already
                             System.out.println("Error: the item is not available === Erreur: l'objet n'est plus disponible, il est déjà acheté par une autre personne.");
                         }
-
                     }
-
                 }catch (NumberFormatException e){
                     System.out.println("Error: rarity is a number === Erreur: Veuillez entrez un nombre pour la rareté de votre objet. ");
                     e.getMessage();
                 }
-
             }while (!(rarity >= 0 && rarity <= 100));
 
         }catch (Exception e) {
                 e.getMessage();
-            }
+        }
 
     }
 

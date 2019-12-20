@@ -96,7 +96,7 @@ public class Create_End_Raises {
         System.out.println("Enter the reference of raise that you want to pay === Entrez la référence de l'objet que vous voulez régler.");
         Scanner s = new Scanner(System.in);
         String ref = s.nextLine();
-        System.out.println("Enter the date the you wants to pay === Entrez la date que réglement.");
+        System.out.println("Enter the date that you wants to pay === Entrez la date que réglement.");
         Scanner d = new Scanner(System.in);
         String dp = d.nextLine();
         if(Finder.findTheRaiseInListRaise(ref,listRaises)!=null){ // reference existe dans la troisième table
