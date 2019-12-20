@@ -15,8 +15,6 @@ import java.util.Scanner;
 
 public class Create_Remove_Items {
 
-    private static int rarity;
-
     public static void createAddItem(List<Items> listItems, List<Raises> listRaise) {
         System.out.println("Add a item === Ajouter un objet");
 
@@ -31,6 +29,7 @@ public class Create_Remove_Items {
             Scanner ct = new Scanner(System.in);
             String category = ct.next();
 
+            int rarity = -1;
             do{ // faire
                 try{
                     // rentrer les donnees
@@ -57,7 +56,7 @@ public class Create_Remove_Items {
                     e.getMessage();
                 }
 
-            }while (!(rarity > 0 && rarity < 100));
+            }while (!(rarity >= 0 && rarity <= 100));
 
         }catch (Exception e) {
                 e.getMessage();
