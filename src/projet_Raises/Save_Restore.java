@@ -108,6 +108,8 @@ public class Save_Restore {
 
 
             readerUser.close();
+            readerItem.close();
+            readerRaise.close();
 
 
         }catch (FileNotFoundException e){
