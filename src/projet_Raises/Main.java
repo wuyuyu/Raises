@@ -5,9 +5,9 @@ import org.w3c.dom.ls.LSOutput;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Main {
     public Main(){
-
     }
     public static void main(String[] args) {
         System.out.println("Application has started");

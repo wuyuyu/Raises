@@ -6,21 +6,14 @@ import java.util.Scanner;
 
 public class Create_End_Raises {
     /**
+     * [#11]
      * create and add a raise
-     * - this command takes as parameter the first and last name of a user as well as the reference of the associated object
-     * - if the user does not exist, an error is displayed.
-     * - if the object reference does not exist, an error is displayed.
-     * - if the object is already in use, ie in an entry in the third table but with a return date / arrival date / end date not filled in, then an error is displayed.
-     * - in all other cases, we store the entry with today's date (put a random history value to have different dates)
-     * - display the summary of the addition (last name, first name of the user, object ref, start date)
-     *
-     * createraise
-     * - cette commande prend en paramètre le prénom et le nom d'un utilisateur ainsi que la référence de l'objet associé
-     * - si l'utilisateur n'existe pas on affiche une erreur.
-     * - si la référence de l'objet n'existe pas on affiche une erreur.
-     * - si l'objet est deja en cours d'utilisation, c'est à dire dans une entrée de la troisème table mais avec une date de rendu / date d'arrivée / date de fin non remplie, alors on affiche une erreur.
-     * - dans tous les autres cas, on stocke l'entrée avec la date du jour (mettre une valeur aléatoire histoire d'avoir des dates différentes)
-     * - afficher le récapitulatif de l'ajout (nom , prénom de l'utilisateur, ref de l'objet, date de debut)
+     * this command takes as parameter the first and last name of a user as well as the reference of the associated object
+     * if the user does not exist, an error is displayed.
+     * if the object reference does not exist, an error is displayed.
+     * if the object is already in use, ie in an entry in the third table but with a return date / arrival date / end date not filled in, then an error is displayed.
+     * in all other cases, we store the entry with today's date (put a random history value to have different dates)
+     * display the summary of the addition (last name, first name of the user, object ref, start date)
      * @param listUsers
      * @param listItems
      * @param listRaises
@@ -89,19 +82,13 @@ public class Create_End_Raises {
 
 
     /**
-     *  - this command takes as parameter the reference of an object
-     *  - if this reference does not exist in the third table, then an error is displayed
-     *  - if this object is not in a current entry, an error is displayed
-     *  - if this object is currently in a current entry, then we update the end date (put a random date
-     *  - but which is greater than the departure date)
-     *  - display the summary of the entry (last name, first name of the user, object ref, start date, end date)
-     *
-     * - cette commande prend en paramètre la référence d'un objet
-     * - si cette référence n'existe pas dans la troisième table , alors on affiche une erreur
-     * - si cet objet n'est pas dans une entrée en cours, on affiche une erreur
-     * - si cet objet est actuellement dans une entrée en cours, alors on met a jour la date de fin (mettre une date aléatoire
-     * mais qui soit supérieure à la date départ)
-     * - afficher le récapitulatif de l'entrée (nom, prénom de l'utilisateur, ref de l'objet, date de debut, date de fin)
+     * [#12]
+     *  this command takes as parameter the reference of an object
+     *  if this reference does not exist in the third table, then an error is displayed
+     *  if this object is not in a current entry, an error is displayed
+     *  if this object is currently in a current entry, then we update the end date (put a random date
+     *  but which is greater than the departure date)
+     *  display the summary of the entry (last name, first name of the user, object ref, start date, end date)
      * @param listRaises
      */
 
@@ -112,9 +99,9 @@ public class Create_End_Raises {
         System.out.println("Enter the date the you wants to pay.");
         Scanner d = new Scanner(System.in);
         String dp = d.nextLine();
-        if(Finder.finTheRaiseInListRaise(ref,listRaises)!=null){ // reference existe dans la troisième table
-            if(Finder.finTheRaiseInListRaise(ref, listRaises).getDatePay().equals("unpaid")){// il faut que cette référence ne possède pas de date de fin (deuxieme check)
-                Finder.finTheRaiseInListRaise(ref,listRaises).setDatePay(dp);
+        if(Finder.findTheRaiseInListRaise(ref,listRaises)!=null){ // reference existe dans la troisième table
+            if(Finder.findTheRaiseInListRaise(ref, listRaises).getDatePay().equals("unpaid")){// il faut que cette référence ne possède pas de date de fin (deuxieme check)
+                Finder.findTheRaiseInListRaise(ref,listRaises).setDatePay(dp);
                 System.out.println("Pay success!");
             }else {
                 System.out.println("Error: the reference of the item has been paid.");

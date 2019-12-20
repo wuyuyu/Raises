@@ -5,21 +5,18 @@ import java.util.Scanner;
 
 public class Edit_User {
 
-    public Edit_User() {
-
-    }
     /**
-     * - la commande va modifier un utilisateur déjà enregistré
-     * - la commande recherche un utilisateur avec exactement le patronyme rentré.
-     * Si l'utilisateur existe, alors la commande demande d'entrer tous les nouveaux paramètres un à un.
-     * Si pour un paramètre on entre une chaine vide, on garde la valeur précédente
-     *
-     *
-     * - la commande va ensuite vérifier les nouvelles informations entrées (comme le fait adduser) et enregistrer les modifications
-     * de l'utilisateur DANS LE MEME OBJET (on modifie l'utilisateur, on n'en créé pas de nouveau).
-     * SI une erreur est survenue dans la saisie des nouvelles valeurs (ex : le nouveau nom et le nouveau prénom existent deja, ou bien un champ de type entier qui contient des lettres) alors on ne modifie pas l'utilisateur et on affiche un message d'erreur.
-     * - si l'utilisateur recherché n'existe pas dans la liste, alors on affiche un message d'erreur.
-     * - si l'utilisateur est utilisé dans la troisième table (emprunts, locations, enchères, livraisons, actions, transactions), alors la modification de cet utilisateur ne pourra pas se faire et un message d'erreur sera affiché
+     [# 4] edit user <firstname> <lastname>
+     the command will modify an already registered user
+     - the command searches for a user with the exact surname entered. If the user exists, then the command asks to enter all the new
+     parameters one by one. If for a parameter we enter an empty string, we keep the previous value
+     - the command will then check the new information entered (as done by adduser) and save the user's modifications IN THE SAME OBJECT
+     (we modify the user, we don't create a new one). If an error has occurred in the entry of the new values ​​(ex: the new name and the
+     new first name already exist, or else an integer field which contains letters) then we do not modify the user and we display a
+     message d 'mistake.
+     - if the user sought does not exist in the list, then an error message is displayed.
+     - if the user is used in the third table (loans, rentals, auctions, deliveries, actions, transactions), then the modification of this
+     user cannot be made and an error message will be displayed
      * @param listUsers
      */
 

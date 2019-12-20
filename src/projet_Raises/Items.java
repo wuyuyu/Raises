@@ -6,12 +6,6 @@ package projet_Raises;
  * reference(string)
  * category(string)
  * rarity(integer) between 0 and 100
- *
- * [>] Les objets
- * - l'intitulé (chaine de caractères)
- * - la référence (chaine de caractères arbitraire et unique, ex: B312)
- * - la catégorie (chaine de caracteres
- * - la rareté (entier en pourcentage de 0 à 100)
  */
 
 public class Items {

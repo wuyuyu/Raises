@@ -12,13 +12,6 @@ import java.util.Scanner;
  * country(string)
  * age(integer) between 10 and 99
  * specialty
- *
- * [>] Les acquéreurs
- * - le prénom (chaine de caractères)
- * - le nom (chaine de caractères)
- * - le pays de naissance (chaine de caractères
- * - l'age (entier)
- * - la spécialité de l'acquéreur (chaine de caractère comme 'antiquités', 'horloges', 'vases', 'sculptures', ...)
  */
 public class User {
     private String firstName;

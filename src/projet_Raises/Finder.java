@@ -4,6 +4,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Finder {
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param userList
+     * @return
+     */
 
     public static boolean isUserExist(String firstName, String lastName, List<User> userList){
         for (User user: userList){
@@ -13,6 +20,14 @@ public class Finder {
         }
          return false;
     }
+
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param userList
+     * @return
+     */
 
     public static User findTheUserExistInList(String firstName, String lastName, List<User> userList){
         User userFound = null;
@@ -26,9 +41,9 @@ public class Finder {
 
 
     /**
-     *la commande cherche d'abord si la référence de l'objet est présente dans la troisème table, et si l'objet existe dejà error
+     *the command first searches if the object reference is present in the third table
      * @param reference
-     * @param RaisesList
+     * @param listRaises
      * @return
      */
     public static boolean isReferenceExistInListRaises(String reference, List<Raises> listRaises) {
@@ -41,7 +56,13 @@ public class Finder {
         }return false;
     }
 
-
+    /**
+     *
+     * @param firstName user's first name
+     * @param lastName user's last name
+     * @param listRaise
+     * @return true or false
+     */
     public static boolean isUserExistInRaisesList(String firstName, String lastName, List<Raises> listRaise) {
         for(Raises raises: listRaise){
             if(raises.getFirstName().equals(firstName) && raises.getLastName().equals(lastName)){
@@ -51,8 +72,14 @@ public class Finder {
         return false;
     }
 
+    /**
+     * find a raise in list raises
+     * @param ref with a reference we can find it in list raises
+     * @param listRaises
+     * @return a raise
+     */
 
-    public static Raises finTheRaiseInListRaise(String ref,List<Raises> listRaises) {
+    public static Raises findTheRaiseInListRaise(String ref, List<Raises> listRaises) {
         Raises r = null;
         for(Raises raises: listRaises){
             if(raises.getRef().equals(ref)){

@@ -7,14 +7,7 @@ package projet_Raises;
  * reference(string)
  * the date of buy(string)
  * the date of payment(string)
- *
- * [>] Les enchères
- * - nom de l'acquéreur (chaine de caractères)
- * - le prénom de l'acquéreur (chaine de caractères)
- * - la référence de l'objet (chaine de caractères)
- * - la date du jour de l'enchère (vous êtes libres du format exact à implémenter)
- * - la date de paiement de l'enchère (vous êtes libres du format exact à implémenter. N'oubliez pas de spécifier la valeur à utiliser pour une enchère qui n'a pas encore été payée)
- */
+*/
 
 public class Raises {
     private String firstName;

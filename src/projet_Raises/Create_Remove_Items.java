@@ -4,11 +4,12 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * - ajoute un objet dans la liste conformément à la deuxième table
- * - la commande prend tous les champs décrits dans la table plus haut
- * - la commande cherche d'abord si la référence de l'objet est présente dans la troisème table, et si l'objet existe dejà un message
- * d'erreur s'affiche
- * - si la reference de l'objet n'existe pas, alors on le créé dans une liste
+ * [# 7] add item
+ * add an object to the list in accordance with the second table (respectively Books, Cars, Objects, Packages, Houses, Actions)
+ * the command takes all the fields described in the table above
+ * the command first searches if the object reference is present in the third table, and if the object already exists an
+ * error message is displayed
+ * if the object reference does not exist, then we create it in a list
  */
 
 
@@ -58,13 +59,13 @@ public class Create_Remove_Items {
 
 
     /**
-     * [#9] removebook / removecar / removeitem / removepacket / removehouse / removestock
-     * - cette commande prend en paramètre la référence de l'objet à modifier
-     * - cette commande recherche un objet avec la meme référence rentrée et va le supprimer de la liste.
-     * - si l'objet recherché n'existe pas, alors on affiche un message d'erreur comme quoi il est introuvable.
-     * - si l'objet existe, il est supprimé de la liste en mémoire, et on affiche un message de réussite de l'effacement.
-     * - si l'objet est utilisé dans la troisième table (emprunts, locations, enchères, livraisons, actions, transactions), alors l'effacement de cet objet ne pourra pas se faire et un message d'erreur sera affiché
-     */
+     * [# 9] remove item
+     * this command takes as a parameter the reference of the object to modify
+     * this command searches for an object with the same reference entered and will delete it from the list.
+     * if the object sought does not exist, then an error message is displayed stating that it cannot be found.
+     * if the object exists, it is deleted from the list in memory, and a message of successful deletion is displayed.
+     * if the object is used in the third table (loans, rentals, auctions, deliveries, actions, transactions), then the deletion of this object cannot be done and an error message will be displayed
+    */
 
     public static void removeItem(List<Items> listItems, List<Raises> listRaises) {
 

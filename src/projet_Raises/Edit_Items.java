@@ -5,20 +5,16 @@ import java.util.Scanner;
 
 /**
  * [#8]
- * - cette commande prend en paramètre la référence de l'objet à modifier
- * - la commande va modifier un objet déjà enregistré
- * - la commande recherche un objet avec exactement la référence entrée. Si l'objet existe, alors la commande demande d'entrer tous
- * les nouveaux paramètres un à un. Si pour un paramètre on entre une chaine vide, on garde la valeur précédente
- * - la commande va ensuite vérifier les nouvelles informations entrées (comme le fait la commande add) et enregistrer les modifications
- * de l'objet DANS LE MEME OBJET (on modifie l'objet, on n'en créé pas de nouveau). SI une erreur est survenue dans la saisie des
- * valeurs alors on ne modifie pas l'objet et on affiche un message d'erreur.
- * - si l'objet recherché n'existe pas dans la liste, alors on affiche un message d'erreur.
- * - si l'objet est utilisé dans la troisième table (emprunts, locations, enchères, livraisons, actions, transactions), alors la
- * modification de cet objet ne pourra pas se faire et un message d'erreur sera affiché
- * private String title;
- *     private String reference;
- *     private String category;
- *     private int rarity;
+ * this command takes as a parameter the reference of the object to modify
+ * the command will modify an already registered object
+ * the command searches for an object with exactly the reference entered. If the object exists, then the command asks to enter all
+ * the new parameters one by one. If for a parameter we enter an empty string, we keep the previous value
+ * the command will then check the new information entered (as the add command does) and save the modifications of the object IN THE
+ * SAME OBJECT (we modify the object, we do not create a new one). If an error occurred in the entry of the values ​​then the object is
+ * not modified and an error message is displayed.
+ * if the object sought does not exist in the list, then an error message is displayed.
+ * if the object is used in the third table (loans, rentals, auctions, deliveries, actions, transactions), then the modification of
+ * this object cannot be done and an error message will be displayed
  */
 public class Edit_Items {
 
@@ -39,8 +35,8 @@ public class Edit_Items {
         }
 
         for (Items items : listItems) {
-            if (items.getReference().equals(ref)) {//l'objet exist
-                if (!isRefExistInRaise) {//l'objet n'existe pas dans la troisime tableau
+            if (items.getReference().equals(ref)) {// item exist
+                if (!isRefExistInRaise) {//item didn't exist in list raises
                     System.out.println("Edit the title, step 'Enter' for keep the same.");
                     Scanner t = new Scanner(System.in);
                     String title = t.nextLine();
@@ -85,7 +81,7 @@ public class Edit_Items {
                     System.out.println("your item has been edited with success!");
                     System.out.println("title: " + title + " ,reference: " + refNew + " , category: " + category + " ,rarity: " + rarity);
                 } else {
-                    //l'objet existe dans la 3ème tableau
+                    //item exist in list raises
                     System.out.println("The item can't be edit because it exist in raise list. ");
                 }
             } else {

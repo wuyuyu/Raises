@@ -7,6 +7,9 @@ public class Order {
     public Order() {
     }
 
+    /**
+     * help
+     */
     public static void help() {
         System.out.println("MENU : ");
         System.out.println("Step 1 for help ... ");
@@ -26,6 +29,10 @@ public class Order {
         System.out.println("Step 15 to restore.");
     }
 
+    /**
+     * get choice and
+     * @return
+     */
     public static int getUserChoice() {
         System.out.println("====== Enter your order here : ");
         Scanner sc = new Scanner(System.in);
@@ -37,13 +44,19 @@ public class Order {
             System.out.println("Error: Please enter a number between 1 and 15.");
             choice = -1;
         }
-
         if (choice < 0) {
             choice = -1;
         }
         return choice;
     }
 
+    /**
+     *
+     * @param cmdNumber
+     * @param listUsers
+     * @param listItems
+     * @param listRaises
+     */
     public static void processCmd(int cmdNumber, List<User> listUsers, List<Items> listItems, List<Raises> listRaises) {
 
         if (cmdNumber == 1) {

@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class Save_Restore {
     /**
-     * - cette commande va sauvegarder toutes vos données liés aux utilisateurs, objets et entrées de la troisième tables sur le disque dur
-     * dans des fichiers.
-     * - vous êtes libres de sauvegarder un seul fichier qui contient toutes les données ou bien un fichier par donnée quelle qu'elle soit.
-     * - le format des données à l'intérieur des fichiers peut etre du texte pur ou tout autre format qui vous semble plus pratique à manipuler.
-     * - vous aurez un bonus sur l'évaluation si vous sauvegardez dans vos fichiers les objets RAM sérialisés (cf. sérialisation et
-     * désérialisation des objets Java)
+     [# 14] save
+     this command will save all your data related to users, objects and entries from the third tables on the hard disk in files.
+     you are free to save a single file which contains all the data or one file per data whatever it is.
+     the format of the data inside the files can be pure text or any other format which seems more practical to you to handle.
+     you will have a bonus on the evaluation if you save the serialized RAM objects in your files (cf. serialization and
+     deserialization of Java objects)
      */
 
     public static void save(List<User> listUsers, List<Items> listItems, List<Raises> listRaises) {
@@ -47,16 +47,20 @@ public class Save_Restore {
         }
     }
 
-}
-/*
+
+    /**
+     [# 15] restore
+     - this command will detect the presence of previously saved files (if they exist) and will open them for reading and retrieve
+     the information contained therein to create new objects in memory
+     - the goal is to restore the memory state as at the time of the backup, even if the application has restarted
+
+     * - cette commande va détecter la présence des fichiers sauvegardés précédemment (si ils existent) et va les ouvrir en lecture et récupérer les informations contenues dedans pour créer de nouveaux objets en mémoire
+     * - le but est de restaurer l'état mémoire comme au moment de la sauvegarde, et ce, meme si l'application a redémarré
+     * @param listUsers
+     * @param listItems
+     * @param listRaises
+     */
     public static void restore(List<User> listUsers, List<Items> listItems, List<Raises> listRaises) {
-
-
-
-        // lire les 3 fichiers
-
-        //lecture du fichier texte
-
 
         try {
             File save = new File("save.txt");
