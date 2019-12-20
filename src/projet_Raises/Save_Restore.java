@@ -60,8 +60,8 @@ public class Save_Restore {
         }
     }
 
-}
- /*   *//**
+
+  /**
      * [# 15] restore
      * - this command will detect the presence of previously saved files (if they exist) and will open them for reading and retrieve
      * the information contained therein to create new objects in memory
@@ -73,24 +73,41 @@ public class Save_Restore {
      * @param listUsers
      * @param listItems
      * @param listRaises
-     *//*
+     */
     public static void restore(List<User> listUsers, List<Items> listItems, List<Raises> listRaises) {
 
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("save.txt"));
-            String line;
-            while ((line = reader.readLine()) != null) {
+            BufferedReader readerUser = new BufferedReader(new FileReader("saveUser.txt"));
+            BufferedReader readerItem = new BufferedReader(new FileReader("saveItem.txt"));
+            BufferedReader readerRaise = new BufferedReader(new FileReader("saveRaise.txt"));
+            String line1;
+            String line2;
+            String line3;
 
-
-                System.out.println(reader.readLine() = String.valueOf(1));
-                String[] lt = line.split("', ");
-                System.out.println(lt[0]+"\n"+ lt[1]+"\n"+lt[2]);
-                User user = new User(lt[0], lt[1], lt[2], Integer.parseInt(lt[3]), lt[4]);
+            while ((line1 = readerUser.readLine()) != null) {
+                String[] lt1 = line1.split(",");
+                User user = new User(lt1[0], lt1[1], lt1[2], Integer.parseInt(lt1[3]), lt1[4]);
                 listUsers.add(user);
-                System.out.println("success");
+                System.out.println("Users restore with success.");
             }
-            reader.close();
+            while ((line2 = readerUser.readLine()) != null) {
+                String[] lt2 = line2.split(",");
+                User user = new User(lt2[0], lt2[1], lt2[2], Integer.parseInt(lt2[3]), lt2[4]);
+                listUsers.add(user);
+                System.out.println("Users restore with success.");
+            }
+            while ((line3 = readerUser.readLine()) != null) {
+                String[] lt3 = line3.split(",");
+                User user = new User(lt3[0], lt3[1], lt3[2], Integer.parseInt(lt3[3]), lt3[4]);
+                listUsers.add(user);
+                System.out.println("Users restore with success.");
+            }
+
+
+
+
+            readerUser.close();
 
 
         }catch (FileNotFoundException e){
@@ -99,7 +116,7 @@ public class Save_Restore {
             eAll.getMessage();
         }
     }
-}*/
+}
 
 /*
 
