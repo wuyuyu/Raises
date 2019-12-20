@@ -11,8 +11,8 @@ public class Order {
      * help
      */
     public static void help() {
-        System.out.println("MENU : ");
-        System.out.println("Step 1 for help ... ");
+        System.out.println("================MENU========= 菜单 ================MENU====================");
+        System.out.println("Step 1 for help ＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙");
         System.out.println("Step 2 to exit.");
         System.out.println("Step 3 to add a user. ");
         System.out.println("Step 4 to edited a user. ");
@@ -26,7 +26,7 @@ public class Order {
         System.out.println("Step 12 to end a raise.");
         System.out.println("Step 13 to list all raises.");
         System.out.println("Step 14 to save.");
-        System.out.println("Step 15 to restore.");
+        System.out.println("Step 15 to restore.＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／＼⊙＿⊙／");
     }
 
     /**
@@ -34,7 +34,7 @@ public class Order {
      * @return
      */
     public static int getUserChoice() {
-        System.out.println("====== Enter your order here : ");
+        System.out.println("Enter your order here ==== 请输入您的指令 ==== Rentrez un numéro de commande");
         Scanner sc = new Scanner(System.in);
 
         int choice;
