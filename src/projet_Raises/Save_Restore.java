@@ -94,23 +94,19 @@ public class Save_Restore {
             while ((line2 = readerItem.readLine()) != null) {
                 String[] lt2 = line2.split(",");
                 User user = new User(lt2[0], lt2[1], lt2[2], Integer.parseInt(lt2[3]), lt2[4]);
-                listUsers.add(user);
+                listItems.add(user);
                 System.out.println("Items restore with success.");
             }
             while ((line3 = readerRaise.readLine()) != null) {
                 String[] lt3 = line3.split(",");
                 User user = new User(lt3[0], lt3[1], lt3[2], Integer.parseInt(lt3[3]), lt3[4]);
-                listUsers.add(user);
+                listRaises.add(user);
                 System.out.println("Raises restore with success.");
             }
-
-
-
 
             readerUser.close();
             readerItem.close();
             readerRaise.close();
-
 
         }catch (FileNotFoundException e){
             e.printStackTrace();
