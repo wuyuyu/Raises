@@ -31,40 +31,40 @@ public class Create_Remove_Items {
             Scanner ct = new Scanner(System.in);
             String category = ct.next();
 
-
-            do {
-                try {
+            do{ // faire
+                try{
+                    // rentrer les donnees
                     System.out.println("Enter the rarity of your object (between 0 and 100) === Entrez la rareté de votre objet: ");
                     Scanner a = new Scanner(System.in);
                     String ag = a.next();
                     rarity = Integer.parseInt(ag);
-                    if (!Finder.isReferenceExistInListRaises(reference, listRaise)) { // if ref not exist
-                        Items createAddItem = new Items(title, reference, category, rarity);
-                        listItems.add(createAddItem);
-                        System.out.println("The item has been created with success === L'objet a bien été enregistré!");
-                        System.out.println(createAddItem);
+                    if(rarity >= 0 && rarity <= 100){
+                        // ajout a la liste
+                        if (!Finder.isReferenceExistInListRaises(reference, listRaise)) { // if ref not exist
+                            Items createAddItem = new Items(title, reference, category, rarity);
+                            listItems.add(createAddItem);
+                            System.out.println("The item has been created with success === L'objet a bien été enregistré!");
+                            System.out.println(createAddItem);
 
-                    } else { // ref of item exist in the list raises already
-                        System.out.println("Error: the item is not available === Erreur: l'objet n'est plus disponible, il est déjà acheté par une autre personne.");
+                        } else { // ref of item exist in the list raises already
+                            System.out.println("Error: the item is not available === Erreur: l'objet n'est plus disponible, il est déjà acheté par une autre personne.");
+                        }
+
                     }
-                    System.out.println("Error: the number of rarity must between 0 and 100");
-                } catch (NumberFormatException ex) {
-                    System.out.println("Error: please enter a number === Erreur: Veuillez entrez un nombre. ");
-                    ex.getMessage();
+
+                }catch (NumberFormatException e){
+                    System.out.println("Error: rarity is a number === Erreur: Veuillez entrez un nombre pour la rareté de votre objet. ");
+                    e.getMessage();
                 }
 
-            }while (rarity < 0 || rarity > 100 /** || manque!!!!!!!! si rareté est une chaine de caractere*/);
-
-
-
-
+            }while (!(rarity > 0 && rarity < 100));
 
         }catch (Exception e) {
                 e.getMessage();
             }
 
     }
-    
+
 
 
     /**
