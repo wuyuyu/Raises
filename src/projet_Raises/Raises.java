@@ -1,6 +1,13 @@
 package projet_Raises;
 
 /**
+ * the raises
+ * first name(string)
+ * last name(string)
+ * reference(string)
+ * the date of buy(string)
+ * the date of payment(string)
+ *
  * [>] Les enchères
  * - nom de l'acquéreur (chaine de caractères)
  * - le prénom de l'acquéreur (chaine de caractères)

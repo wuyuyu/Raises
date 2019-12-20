@@ -1,6 +1,12 @@
 package projet_Raises;
 
 /**
+ * the items
+ * title(string)
+ * reference(string)
+ * category(string)
+ * rarity(integer) between 0 and 100
+ *
  * [>] Les objets
  * - l'intitulé (chaine de caractères)
  * - la référence (chaine de caractères arbitraire et unique, ex: B312)

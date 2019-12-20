@@ -47,17 +47,22 @@ public class Save_Restore {
         }
     }
 
-
+}
+/*
     public static void restore(List<User> listUsers, List<Items> listItems, List<Raises> listRaises) {
+
+
 
         // lire les 3 fichiers
 
         //lecture du fichier texte
+
+
         try {
             File save = new File("save.txt");
             Scanner scSave = new Scanner(save);
-            //FileReader fr = new FileReader("save.txt");
-            //BufferedReader br = new BufferedReader(fr);
+            FileReader fr = new FileReader("save.txt");
+            BufferedReader br = new BufferedReader(fr);
 
             while (scSave.hasNextLine()) {
                 String data = scSave.nextLine();
@@ -66,11 +71,18 @@ public class Save_Restore {
 
                 if (data.startsWith("User")){
                     System.out.println(data);
+                    String [] st = data.split(", ");
+                    while (data.split(", ") == true){
 
+                        User user = new User(st[0], st[1], st[2], Integer.parseInt(st[3]), st[4]);
+                        listUsers.add(user);
+                    }
                 }
 
             }
 
+            scSave.close();
+            fr.close();
 
         }catch (FileNotFoundException e){
             e.printStackTrace();
@@ -112,7 +124,7 @@ public class Save_Restore {
                     User user = new User(st[0], st[1], st[2], Integer.parseInt(st[3]), st[4]);
                     listUsers.add(user);
 
-                     
+
 
 
     }

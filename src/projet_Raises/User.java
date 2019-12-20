@@ -6,6 +6,13 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
+ * the user
+ * first name(string)
+ * last name(string)
+ * country(string)
+ * age(integer) between 10 and 99
+ * specialty
+ *
  * [>] Les acquéreurs
  * - le prénom (chaine de caractères)
  * - le nom (chaine de caractères)
